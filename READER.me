@@ -1,0 +1,8 @@
+jmeter压测dubbo项目:
+
+   1:新建maven工程，依赖jmeter，spring的jar包，需要测试的dubbo项目jar包，zookeeper包，详情见pom.xml
+   2:创建dubbo.xml，通过zookeeper连接到测试的dubbo项目,zk配置为zk.properties
+   3:创建DubboInit类文件，初始化dubbo.xml
+   4:创建测试类继承jmeter的AbstractJavaSamplerClient抽象类，实现测试接口
+   5:打包测试项目，把打包成的lib目录中的jar全部copy到jmeter的lib目录下，项目的jar包copy到jmeter中lib/ext目录中。
+   6:启动jmeter，添加线程组，添加java请求，选择测试类，填写测试参数
